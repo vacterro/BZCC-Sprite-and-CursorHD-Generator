@@ -1,3 +1,5 @@
+# ** THIS CONTENT IS AI GENERATED **
+
 <img width="1434" height="873" alt="2026-05-26_103453" src="https://github.com/user-attachments/assets/68572fc3-0d1f-465b-9029-f853d0307106" />
 ## BZCC Sprite Generator
 
