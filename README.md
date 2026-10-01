@@ -3,6 +3,8 @@
 <img width="1434" height="873" alt="2026-05-26_103453" src="https://github.com/user-attachments/assets/68572fc3-0d1f-465b-9029-f853d0307106" />
 ## BZCC Sprite Generator
 
+**Windows GUI for Battlezone: Combat Commander (BZCC) sprite sheets, HD cursors, color maps, image processing, and game-ready asset export.**
+
 [Exe file you find here in "dist" folder.](https://drive.google.com/drive/folders/1TdC_JE8A9ezst-rZ1kxEcvU3EbNn16qA?usp=drive_link)
 
 **BZCC Sprite Generator** is a unified GUI tool for creating cursor sprite sheets and sprite/color-map assets.  
