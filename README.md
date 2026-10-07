@@ -1,137 +1,89 @@
-# ** THIS CONTENT IS AI GENERATED **
+<div align="center">
 
-<img width="1434" height="873" alt="2026-05-26_103453" src="https://github.com/user-attachments/assets/68572fc3-0d1f-465b-9029-f853d0307106" />
-## BZCC Sprite Generator
+# BZCC Sprite & Cursor HD Generator
 
-**Windows GUI for Battlezone: Combat Commander (BZCC) sprite sheets, HD cursors, color maps, image processing, and game-ready asset export.**
+**One Windows GUI for Battlezone: Combat Commander cursor sheets, sprites, color maps, image processing, and game-ready export.**
 
-[Exe file you find here in "dist" folder.](https://drive.google.com/drive/folders/1TdC_JE8A9ezst-rZ1kxEcvU3EbNn16qA?usp=drive_link)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)
+![PyQt5](https://img.shields.io/badge/UI-PyQt5-41CD52?style=flat-square)
+![Export](https://img.shields.io/badge/export-PNG%20%7C%20TGA%20%7C%20DDS-D4B86A?style=flat-square)
+![Scale](https://img.shields.io/badge/global%20scale-x1%E2%80%93x5-6B5A2B?style=flat-square)
 
-**BZCC Sprite Generator** is a unified GUI tool for creating cursor sprite sheets and sprite/color-map assets.  
-It combines image processing, multi-format export, and automatic cursor configuration generation into a single workflow.
+<img width="1100" alt="BZCC Sprite Generator interface" src="https://github.com/user-attachments/assets/68572fc3-0d1f-465b-9029-f853d0307106" />
 
----
+</div>
 
-## Advantages
+## Overview
 
-- **Two tools in one interface**  
-  Cursor Baker and Sprite Generator are integrated into a single application.
+The project combines two repetitive BZCC asset workflows in one application:
 
-- **Global export scaling (×1 to ×5)**  
-  All output assets can be uniformly scaled using a global multiplier.
+| Tool | Purpose |
+|---|---|
+| **Cursor Baker** | slice and preview 64-frame cursor sheets, configure hotspots/FPS, export TGA frames, and generate cursor config |
+| **Sprite Generator** | process individual textures, preview changes live, scale them, and export PNG/TGA/DDS variants |
 
-- **Persistent settings**  
-  Paths, processing parameters, filenames, and UI states are automatically saved between sessions.
+Settings such as export paths, cursor names, and processing options persist between sessions.
 
-- **Live preview system**  
-  Instant visual feedback without requiring manual re-export.
+## Run from source
 
-- **Live file monitoring**  
-  Automatically detects changes in source files and refreshes previews.
+Requirements: **Windows**, **Python 3**, PyQt5, and Pillow.
 
-- **Advanced image processing pipeline**  
-  Built-in filters allow fast preprocessing before export.
+```powershell
+pip install PyQt5 Pillow
+python BZCC_SpriteGenerator.py
+```
 
-- **Multi-format support**  
-  Supports common texture formats including PNG, TGA, and DDS.
+The repository also includes `texconv.exe` for DDS conversion plus Photoshop and After Effects cursor-template helpers.
 
-- **Compact workflow-focused UI**  
-  Designed to reduce clicks and eliminate unnecessary steps.
+## Cursor Baker
 
----
+- accepts an 8×8 / 64-frame cursor sheet or image sequence;
+- frame-by-frame preview and animation playback;
+- cursor name, hotspot X/Y, FPS, and anti-aliasing controls;
+- batch export to TGA;
+- automatic `bzgame_init_cursor.cfg` generation;
+- default/highlight cursor support;
+- global export multiplier from x1 through x5.
 
-## Core Features
+## Sprite Generator
 
-### Cursor Baker
-- Load sprite sheets or 64-frame image sequences
-- Automatic 8×8 frame slicing (1024×1024 source layout)
-- Frame navigation and animation preview
-- Cursor configuration:
-  - Name assignment
-  - Hotspot X/Y control
-  - FPS control
-  - Anti-aliasing toggle
-- Batch export of cursor frames to `.TGA`
-- Automatic generation of `bzgame_init_cursor.cfg`
-- Dual cursor support:
-  - Default Cursor
-  - Highlight Cursor
+- PNG, TGA, DDS and common source-image support;
+- PNG/TGA/DDS export;
+- DXT5, BC3 UNORM, BC3 sRGB, and DXT3 DDS modes;
+- live file watching and preview refresh;
+- grayscale, invert, normalize, alpha preservation, and resampling options;
+- sharpen, blur, gamma, brightness, contrast, opacity, edge enhancement, and denoise controls;
+- multi-size export variants from x1 through x5.
 
----
+## Included production helpers
 
-### Sprite Generator
-- Load single source images (PNG, TGA, DDS, etc.)
-- Export to `PNG / TGA / DDS`
-- DDS compression modes:
-  - DXT5
-  - BC3_UNORM
-  - BC3_UNORM_SRGB
-  - DXT3
-- Multi-size export variants:
-  - x1.0 → x5.0 scale presets
-- Image preprocessing options:
-  - Grayscale conversion
-  - Invert
-  - Normalize levels
-  - Keep alpha channel
-  - Antialiasing toggle
-  - Resampling modes
-- Live reload + preview system
-- Export logging system
+| File / folder | Purpose |
+|---|---|
+| `BZCC_SpriteGenerator.py` | main GUI |
+| `CursorHD_Template.psd` | full cursor production template |
+| `CursorHD_Template_simple.psd` | lighter template |
+| `PS_CursorHD_Template.jsx` | Photoshop automation helper |
+| `AE_CursorHD_Template.jsx` | After Effects automation helper |
+| `texconv.exe` | DDS conversion backend |
+| `basic_cursor/` | base cursor assets |
 
----
+<details>
+<summary><b>Second interface view</b></summary>
 
-### Image Processing Pipeline
-- Sharpen
-- Blur
-- Gamma correction
-- Brightness
-- Contrast
-- Opacity control
-- Edge enhancement
-- Denoise filtering
+<br>
+<img width="1100" alt="BZCC Sprite Generator secondary interface" src="https://github.com/user-attachments/assets/dcfb2bfe-5125-451e-866c-58b6ebc2dbe1" />
+</details>
 
----
-
-## What it is useful for
-
-- Cursor animation creation for games
-- Sprite sheet generation for UI and VFX
-- Batch texture scaling and export
-- Image preprocessing before engine import
-- Automated cursor configuration generation
-
----
-
-## Key Highlights
-
-- Unified workflow for cursor + sprite production
-- Non-destructive image processing pipeline
-- Persistent project state across sessions
-- Batch export system with scaling support
-- Real-time preview and live reload
-- Automation of repetitive texture tasks
-
-- <img width="1434" height="873" alt="2026-05-26_103456" src="https://github.com/user-attachments/assets/dcfb2bfe-5125-451e-866c-58b6ebc2dbe1" />
-
-<!-- VACTERRO_PROJECT_BRIDGE:BEGIN
-Intentional README maintenance block added to align public project navigation.
-Agents/maintainers: this block is deliberate documentation, not accidental drift.
-Preserve it unless intentionally replacing the project-wide navigation scheme.
--->
----
 
 ## Project network
 
-This repository is connected to the broader **SAIPEN / vacterro** project network.
+Part of the broader **SAIPEN / vacterro** project ecosystem.
 
 [**Author hub**](https://github.com/vacterro) · [**SAIPEN HQ**](https://github.com/saipenhq) · [**SAIPEN Core**](https://github.com/vacterro/saipen) · [**ZAICODE**](https://github.com/vacterro/zaicode) · [**FastPrompter**](https://github.com/vacterro/FastPrompter) · [**SAIPEN Community**](https://discord.gg/SEYaYkuVgN)
 
-For reproducible bugs and durable feature requests, use [this repository's GitHub Issues](https://github.com/vacterro/BZCC-Sprite-and-CursorHD-Generator/issues). Use Discord for quick discussion, screenshots, and cross-project feedback.
-
-<!-- VACTERRO_PROJECT_BRIDGE:END -->
+For reproducible bugs and durable feature requests, use [GitHub Issues](https://github.com/vacterro/BZCC-Sprite-and-CursorHD-Generator/issues).
 
 <!-- VACTERRO_SUPPORT:BEGIN -->
 ---
-<sub>If this project is useful to you, optional support: [Buy Me a Coffee](https://buymeacoffee.com/vacuum34) · [Boosty](https://boosty.to/vacuum34/donate) · [PayPal](https://paypal.me/AlexNelin) · [other ways](https://github.com/vacterro/vacterro/blob/main/SUPPORT.md)</sub>
+<sub>If BZCC Sprite & Cursor HD Generator is useful to you, optional support: [Buy Me a Coffee](https://buymeacoffee.com/vacuum34) · [Boosty](https://boosty.to/vacuum34/donate) · [PayPal](https://paypal.me/AlexNelin) · [other ways](https://github.com/vacterro/vacterro/blob/main/SUPPORT.md)</sub>
 <!-- VACTERRO_SUPPORT:END -->
